@@ -1,6 +1,6 @@
-# .github/workflows/test.yml
 name: Test
-on: 
+
+on:
   push:
     branches:
       - main
@@ -10,11 +10,10 @@ on:
 
 permissions:
   contents: read
-  pull-requests: write
 
-env: 
-  PYTHON_VERSION: "3.12"
-  POETRY_VERSION: "2.0.1"
+env:
+  PYTHON_VERSION: "3.14"
+  POETRY_VERSION: "2.4.1"
 
 jobs:
   test:
@@ -30,23 +29,23 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        ports: 
+        ports:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8  ## v6.0.1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
 
       - name: Set up Python ${{ env.PYTHON_VERSION }}
-        uses: actions/setup-python@83679a892e2d95755f2dac6acb0bfd1e9ac5d548 ## v6.1.0
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
         id: setup-python
 
       - name: Install
-        working-directory: 
+        working-directory:
         run: |
           sudo apt-get install xmlsec1 -y
           python -m pip install --upgrade pip
@@ -60,11 +59,3 @@ jobs:
         run: |
           set -o pipefail
           poetry run pytest --junitxml=pytest.xml --cov --cov-report=term-missing:skip-covered | tee pytest-coverage.txt
-
-      - name: Pytest Coverage Comment
-        if: github.event_name == 'pull_request'
-        id: coverage
-        uses: MishaKav/pytest-coverage-comment@dd5b80bde6d16941f336518e92929e89069d8451 ## v1.7.2
-        with:
-          pytest-coverage-path: pytest-coverage.txt
-          junitxml-path: pytest.xml
