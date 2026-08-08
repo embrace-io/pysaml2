@@ -1,2 +1,2 @@
 mako
-cherrypy>14.0.2
+cherrypy>=18.10.0
