@@ -672,13 +672,13 @@ dev = ["coverage", "hypothesis", "hypothesmith (>=0.2)", "pre-commit", "tox"]
 
 [[package]]
 name = "flake8-logging-format"
-version = "0.7.5"
+version = "2024.24.12"
 description = ""
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "flake8-logging-format-0.7.5.tar.gz", hash = "sha256:54f7e349c934ce5c594f251885bc2240e99f6b48752a672a8fc7e3d1388352bb"},
+    {file = "flake8_logging_format-2024.24.12-py3-none-any.whl", hash = "sha256:7d93c2107354b10a05b1a0d8ccd3a9bfb793aee108007765114c958a7541d674"},
 ]
 
 [package.extras]
@@ -2077,4 +2077,4 @@ s2repoze = ["paste", "repoze.who", "zope.interface"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "2bc9b6c506fd6615660dcc92c68b7d8bac90babf23d26cc0e7c5f636918ba594"
+content-hash = "130cb104e184892641fbfafe8dcd1d9ca40d1e6a3dea938b5d13b4231b23791c"
