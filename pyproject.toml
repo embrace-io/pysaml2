@@ -64,7 +64,7 @@ isort = {version = "^8.0.1", extras = ["pyproject"]}
 tox = "^3.25.1"
 flake8 = ">=7.3.0"
 flake8-bugbear = "^25.11.29"
-flake8-logging-format = "^0.7.5"
+flake8-logging-format = "^2024.24.12"
 Flake8-pyproject = "^1.2.4.0"
 ipdb = "^0.13.9"
 mypy = "^1.0.0"
