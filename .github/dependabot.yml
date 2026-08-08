@@ -11,6 +11,21 @@ updates:
 
   - package-ecosystem: "pip"
     directory: "/"
+    groups:
+      flake8:
+        patterns:
+          - "flake8*"
+          - "Flake8-pyproject"
+      pytest:
+        patterns:
+          - "pytest*"
+      sphinx:
+        patterns:
+          - "sphinx"
+          - "sphinxcontrib-*"
+      types:
+        patterns:
+          - "type-*"
     schedule:
       interval: "daily"
     open-pull-requests-limit: 50
