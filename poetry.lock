@@ -2160,14 +2160,14 @@ urllib3 = ">=2"
 
 [[package]]
 name = "types-setuptools"
-version = "67.8.0.0"
+version = "83.0.0.20260724"
 description = "Typing stubs for setuptools"
 optional = false
-python-versions = "*"
+python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "types-setuptools-67.8.0.0.tar.gz", hash = "sha256:95c9ed61871d6c0e258433373a4e1753c0a7c3627a46f4d4058c7b5a08ab844f"},
-    {file = "types_setuptools-67.8.0.0-py3-none-any.whl", hash = "sha256:6df73340d96b238a4188b7b7668814b37e8018168aef1eef94a3b1872e3f60ff"},
+    {file = "types_setuptools-83.0.0.20260724-py3-none-any.whl", hash = "sha256:eed1a91e1ed9d8ec9f3e71908e5bb17272e41e0852d37d1485ecd9cd33165e1a"},
+    {file = "types_setuptools-83.0.0.20260724.tar.gz", hash = "sha256:fe2801176b667f1e8209f8571b0839ca6c34318d743825aeacf3f29970c8d46f"},
 ]
 
 [[package]]
@@ -2345,4 +2345,4 @@ s2repoze = ["paste", "repoze.who", "zope.interface"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "86b1f749bb21e21c1bd75ee08b10750a5518e233c80b3138fd3cfd1776b20742"
+content-hash = "35179a1d1a3517332d77510db6b1315e01aaceb241601acaffff49e27987cd78"
