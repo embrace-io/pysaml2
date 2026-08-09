@@ -82,6 +82,7 @@ pymongo = ">=4.17.0,<5"
 pytest = ">=9.1.1"
 responses = "*"
 pytest-cov = "7.1.0"
+pytest-xdist = "^3.8.0"
 
 [tool.poetry.group.coverage]
 optional = true
@@ -102,7 +103,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra -vvv"
+addopts = "-ra -vvv --numprocesses=auto"
 testpaths = [
     "tests",
 ]
