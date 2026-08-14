@@ -11,51 +11,35 @@ on:
 permissions:
   contents: read
 
-env:
-  PYTHON_VERSION: "3.14"
-  POETRY_VERSION: "2.4.1"
-
 jobs:
   test:
     runs-on: ubuntu-latest
-
-    services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          - 5432:5432
-
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.12', '3.13', '3.14']
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
           fetch-depth: 0
 
-      - name: Set up Python ${{ env.PYTHON_VERSION }}
+      - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
-        id: setup-python
+          python-version: ${{ matrix.python-version }}
 
-      - name: Install
-        working-directory:
+      - name: Install dependencies
         run: |
-          sudo apt-get install xmlsec1 -y
-          python -m pip install --upgrade pip
-          pip install pytest pytest-cov
-          pip install poetry
+          sudo apt-get install -y xmlsec1
+          python -m pip install --upgrade uv
+
+          uv pip install poetry==2.4.1
           poetry env use python
           poetry lock
-          poetry install --with test
+          poetry install --with test,coverage
 
-      - name: Test and Coverage
+      - name: Run pytest
         run: |
           set -o pipefail
           poetry run pytest --junitxml=pytest.xml --cov --cov-report=term-missing:skip-covered | tee pytest-coverage.txt
