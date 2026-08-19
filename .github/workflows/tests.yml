@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ['3.12', '3.13', '3.14']
+        python-version: ['3.11', '3.12', '3.13', '3.14']
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -32,9 +32,8 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install -y xmlsec1
-          python -m pip install --upgrade uv
 
-          uv pip install poetry==2.4.1
+          python -mpip install poetry==2.4.1
           poetry env use python
           poetry lock
           poetry install --with test,coverage
