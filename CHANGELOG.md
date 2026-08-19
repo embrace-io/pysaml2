@@ -1,5 +1,10 @@
 # Changelog
 
+## v7.6.1 (2026-08-19)
+
+- Lock `cryptography` to `<50.0.0` until compatibility is fixed
+- build: further tweaks to GitHub workflows that execute tests
+
 ## v7.6.0 (2026-05-08)
 
 - Major vulnerability patching for `cryptography` and `pyopenssl` packages

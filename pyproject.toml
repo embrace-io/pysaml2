@@ -20,11 +20,11 @@ classifiers = [
 ]
 requires-python = ">=3.11,<4.0"
 dependencies = [
-  "cryptography >=48.0.1",
+  "cryptography >=48.0.1,<50.0.0",
   "defusedxml",
   "pyopenssl >=26.0.0",
   "python-dateutil",
-  "requests >=2.33.0,<3.0.0",  # ^2 means compatible with 2.x
+  "requests >=2.33.0,<3.0.0",
   "xmlschema >=2.0.0,<3.0.0"
 ]
 
@@ -82,6 +82,7 @@ pymongo = ">=4.17.0,<5"
 pytest = ">=9.1.1"
 responses = "*"
 pytest-cov = "7.1.0"
+pytest-xdist = "^3.8.0"
 
 [tool.poetry.group.coverage]
 optional = true
@@ -102,7 +103,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra -vvv"
+addopts = "-ra -vvv --numprocesses=auto --dist=loadfile"
 testpaths = [
     "tests",
 ]
