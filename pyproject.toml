@@ -1,6 +1,6 @@
 [project]
 name = "pysaml2"
-version = "7.6.0"
+version = "7.6.1"
 description = "Python implementation of SAML Version 2 Standard"
 license = "Apache-2.0"
 authors = [{name = "IdentityPython", email = "discuss@idpy.org"}]
@@ -20,9 +20,9 @@ classifiers = [
 ]
 requires-python = ">=3.11,<4.0"
 dependencies = [
-  "cryptography >=50.0.0",
+  "cryptography >=50.0.0,<51.0.0",
   "defusedxml",
-  "requests >=2.33.0,<3.0.0",  # ^2 means compatible with 2.x
+  "requests >=2.33.0,<3.0.0",
   "xmlschema >=2.0.0,<3.0.0"
 ]
 
@@ -59,14 +59,14 @@ optional = true
 [tool.poetry.group.dev.dependencies]
 black = ">=26.3.1"
 isort = {version = "^8.0.1", extras = ["pyproject"]}
-tox = "^4.58.0"
+tox = "^4.60.0"
 flake8 = ">=7.3.0"
 flake8-bugbear = "^25.11.29"
 flake8-logging-format = "^2024.24.12"
 Flake8-pyproject = "^1.2.4.0"
 ipdb = "^0.13.9"
-mypy = "^2.3.0"
-types-setuptools = "^83.0.0.20260724"
+mypy = "^2.3.1"
+types-setuptools = "^84.0.0.20260812"
 types-six = "^1.17.0.20260724"
 types-requests = "^2.33.0.20260712"
 

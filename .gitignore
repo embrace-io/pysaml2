@@ -5,6 +5,8 @@ example/*/*.xml
 example/*/*_conf.py
 example/*/modules/
 
+tests/subject.*
+tests/pki/qwerty.*
 tests/*.log.*
 tests/*.db
 tests/*.dir
