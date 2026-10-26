@@ -68,10 +68,10 @@ flake8-logging-format = "^2024.24.12"
 Flake8-pyproject = "^1.2.4.0"
 ipdb = "^0.13.9"
 mypy = "^2.3.1"
-types-python-dateutil = "^2.9.0.20260807"
-types-setuptools = "^84.0.0.20260812"
-types-six = "^1.17.0.20260724"
-types-requests = "^2.33.0.20260712"
+types-python-dateutil = "^2.9.0.20261021"
+types-setuptools = "^84.0.0.20261006"
+types-six = "^1.17.0.20261008"
+types-requests = "^2.33.0.20261006"
 
 [tool.poetry.group.test]
 optional = true
