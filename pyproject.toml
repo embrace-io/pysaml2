@@ -77,7 +77,7 @@ types-requests = "^2.33.0.20260712"
 optional = true
 
 [tool.poetry.group.test.dependencies]
-pyasn1 = ">=0.6.4"
+pyasn1 = ">=0.6.5"
 pymongo = ">=4.17.0,<5"
 pytest = ">=9.1.1"
 responses = "*"
